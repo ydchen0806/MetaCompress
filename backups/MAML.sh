@@ -1,0 +1,1 @@
+python test_NFGR_MAML.py -p MAML.yaml -g 2

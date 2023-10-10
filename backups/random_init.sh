@@ -1,0 +1,1 @@
+python test_random_init.py -p random_init.yaml -g 0

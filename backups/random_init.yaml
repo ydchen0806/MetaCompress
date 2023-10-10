@@ -1,0 +1,50 @@
+Reproduc:
+  seed: 42
+  benchmark: false
+  deterministic: true
+CompressFramework:
+  Name: NFGR_MAML
+  Train:
+    train_data_dir: /ssd/0/qjy/Dataset/COVID19_16x128x128/train
+    val_data_dir: /ssd/0/qjy/Dataset/COVID19_16x128x128/val
+    sample_size: 100000 # per batch
+    sample_count: 1 # iter # times in a same batch
+    batch_size: 1
+    max_outer_steps: 100000
+    max_inner_steps: 3
+    optimizer_name_phi_outer: Adam
+    lr_phi_outer: 0.00005
+    lr_phi_inner: 0.00001
+    gpu: true
+    log_every_n_step: 50
+    val_every_n_step: 1000
+    val_every_n_epoch: 100000
+    val_data_quanity: 1   # 验证集的batchsize
+  Compress:
+    gpu: true
+    sample_size: 50000 # 并不是越大训练效果越好
+    max_steps: 80000
+    val_steps: 5000
+    lr_phi: 0.0001
+    optimizer_name_phi: Adam
+  Decompress:
+    sample_size: 10000
+    gpu: true
+  Module:
+    phi:
+      data_channel: 1
+  Normalize:
+    name: minmax01_0mean1std
+  Siren:
+    layers: 5
+    compression_ratio: 256
+    coords_channel: 3
+    data_channel: 1
+    w0: 10
+
+Log:
+  project_name: NFGR_MAML
+  task_name: exp1
+  stdlog: false
+  tensorboard: true
+  logdir: random_init

@@ -1,0 +1,44 @@
+Reproduc:
+  seed: 42
+  benchmark: false
+  deterministic: true
+
+Name: NFGR_MAML
+
+Train:
+  train_data_dir: /ssd/0/qjy/Dataset/COVID19_16x128x128_classify_equal/w0_10/train
+  val_data_dir: /ssd/0/qjy/Dataset/COVID19_16x128x128_classify_equal/w0_10/val
+  sample_size: 100000 
+  sample_count: 1 # iter # times in a same batch
+  batch_size: 1
+  max_inner_steps: 3
+  lr_phi_outer: 0.00005
+  lr_phi_inner: 0.00001
+  gpu: true
+  lr_type: per_parameter_per_step
+  maml_epoch: 100
+  summary_every_n_step: 50
+  val_every_n_step: 1000
+
+Normalize:
+  name: minmax01_0mean1std
+
+Siren:
+  layers: 5
+  compression_ratio: 256
+  coords_channel: 3
+  data_channel: 1
+  w0: 10
+
+Save_dir: Output/MAML_w0_10
+
+Overfit:
+  test_data_dir: /ssd/0/qjy/Dataset/COVID19_16x128x128_classify_equal/w0_10/test
+  epoch: 50000
+  epoch_til_ckpt: 2500
+  epoch_til_summary: 500
+  lr: 0.001
+  patience: 500
+  warmup: 100
+  sample_size: 100000
+  lr_static: true
