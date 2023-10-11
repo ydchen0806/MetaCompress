@@ -32,6 +32,13 @@ We highly recommend using Docker to set up the required environment. Two Docker 
 
 This script is used to perform meta-learning training on segmented data blocks.
 
+## `MAML_with_uncertainty_sampler.py`
+- **Uncertainty-based Sampling**:
+  This script sets different sampling probabilities for various samples based on their uncertainty. In meta-learning, it's essential to delve deeper into complex and uncertain samples to improve the model's adaptability and robustness.
+
+- **Advanced Meta-Learning Techniques**:
+  `MAML_with_uncertainty_sampler.py` implements advanced meta-learning strategies, making it a valuable addition to your toolkit for tackling more complex problems and improving your model's performance.
+
 ### `train_from_meta.py`
 
 This script starts the model compression process using the learned initialization parameters from meta-learning.
