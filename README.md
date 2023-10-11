@@ -1,6 +1,6 @@
 # Meta-Learning with MAML
 
-This repository contains scripts for meta-learning and model compression using the Model-Agnostic Meta-Learning (MAML) approach. The scripts are designed to work with segmented data blocks.
+This repository contains scripts for meta-learning and model compression. The scripts are designed to work with segmented data blocks.
 
 ## Environment Setup
 
@@ -14,13 +14,12 @@ To set up the required environment, you can choose from the following options:
 
 We highly recommend using Docker to set up the required environment. Two Docker images are available for your convenience:
 
-- **Using Docker from ali**:
-  You can utilize Docker to create a pre-configured environment with ease. Choose from the following Docker images:
-
+- **Using Docker from ali cloud**:
   - [**registry.cn-hangzhou.aliyuncs.com/cyd_dl/monai-vit:v26**](https://registry.cn-hangzhou.aliyuncs.com/cyd_dl/monai-vit:v26)
   
   ```bash
   docker pull registry.cn-hangzhou.aliyuncs.com/cyd_dl/monai-vit:v26
+  
 - **Using docker from dockerhub**:
   - [**cyd_docker:v1**](https://ydchen0806/cyd_docker:v1)
   
