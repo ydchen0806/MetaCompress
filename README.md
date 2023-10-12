@@ -1,4 +1,4 @@
-# Meta-Learning with MAML
+# Medical image compressing with Meta-Learning
 
 This repository contains scripts for meta-learning and model compression. The scripts are designed to work with segmented data blocks.
 
